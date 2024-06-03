@@ -9,7 +9,7 @@ const fetchuser = require('../middleware/fetchuser')
 const JWT_SECRET = "I am $hubham"
 
 
-// ROute 1: Create a user using :post "api/auth/createuser". no login required
+// Route 1: Create a user using :post "api/auth/createuser". no login required
 router.post('/createuser', [
     body('name').isLength({ min: 3 }),
     body('email').isEmail(),
@@ -111,4 +111,4 @@ router.post('/getuser',fetchuser, async (req, res) => {
         res.status(500).send("Server Error Ocurred !!")
     }
 })
-module.exports = router;        
+module.exports = router;         
